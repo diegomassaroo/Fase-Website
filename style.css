@@ -556,7 +556,7 @@ display: none;
   background-color: #CDD0D3;
 }
 
-.#dropdown-content a {
+#dropdown-content a {
   font-family: "Fase", Helvetica, Sans-serif;
   font-weight: 97;
   font-size: 17px;

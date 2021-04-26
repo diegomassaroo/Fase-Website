@@ -32,7 +32,7 @@ body {
     @font-face {
       font-family: "Fase";
       src: url('assets/fonts/Fase.woff2') format("woff2-variations"), url('assets/fonts/Fase.ttf') format("truetype-variations");
-      font-weight: 63 159;
+      font-weight: 85 159;
     }
 
 /*Button active*/
@@ -45,6 +45,14 @@ body {
 	color: #e8eaed;
 	border-bottom: 4px solid #e8eaed;
 }
+
+    #typeTester {
+	  display: none;
+      --axis: 85;
+      font-family: "Fase", Helvetica, Sans-serif;
+      font-weight: var(--axis);
+      font-size: 32px;
+    }	  
 
   </style>
 </head>
@@ -168,6 +176,15 @@ The developed typeface is available to download for future projects from third p
 		</div>
 		</div>
 		</div>
+	
+	  <!--Type tester-->
+  <div>
+    <textarea autofocus id="typeTester" placeholder="Type something…"></textarea>
+  </div>
+	
+	  <!--Light value-->
+  <div id="lightLevel">
+  </div>
 
   <script id="rendered-js">
     // This only works behind a flag in chrome
@@ -184,13 +201,13 @@ The developed typeface is available to download for future projects from third p
 
     //Set min and max value for font and light
     const minAxisValue = 159;
-    const maxAxisValue = 63;
+    const maxAxisValue = 85;
 
     const minEventValue = 0;
-    const maxEventValue = 5000;
+    const maxEventValue = 3000;
 
     //CSS that change font weight
-    changeText.style.setProperty("--axis", 63);
+    changeText.style.setProperty("--axis", 85);
 
     //Setting light value correspond to axis value
     if ('AmbientLightSensor' in window) {

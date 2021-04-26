@@ -49,10 +49,12 @@
 
       transform: translateX(-50%);
       position: absolute;
-      top: 108px;
+	  top: 60px;
+	  padding-top: 58px;
+	  padding-bottom: 58px;
       left: 50%;
       width: 56%;
-      height: 78%;
+      height: calc(85.4% - 58px);
       align-content: center;
       justify-content: center;
 	  background-color: #ffffff;
@@ -65,9 +67,9 @@
 
     @media only screen and (max-width:480px) {
       #typeTester {
-		top: 78px;
+		top: 30px;
         width: 88%;
-        height: 84%;
+        height: calc(88% - 50px);
         font-size: 24px;
       }
     }

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+  <link rel="icon" type="image/png" href="assets/image/favGrigio.jpg" sizes="32x32" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="sketch.js"></script>
+
+  <style>
+    /*Set typeface family*/
+    @font-face {
+      font-family: "Fase";
+      src: url('assets/fonts/Fase.woff2') format("woff2-variations"), url('assets/fonts/Fase.ttf') format("truetype-variations");
+      font-weight: 85 159;
+    }
+
+    #typeTester {
+      --axis: 85;
+      font-family: "Fase", Helvetica, Sans-serif;
+      font-weight: var(--axis);
+      font-size: 32px;
+
+      font-style: normal;
+      font-stretch: normal;
+      font-kerning: normal;
+
+      -webkit-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+
+      text-align: left;
+      overflow-y: scroll;
+      -webkit-user-modify: read-write;
+      overflow-wrap: break-word;
+      -webkit-line-break: after-white-space;
+
+      line-height: 1.38;
+      letter-spacing: .02rem;
+
+      outline: none;
+      resize: none;
+      border: none;
+      display: inline-block;
+      color: #202124;
+
+      transform: translateX(-50%);
+      position: absolute;
+	  top: 60px;
+	  padding-top: 58px;
+	  padding-bottom: 58px;
+      left: 50%;
+      width: 56%;
+      height: calc(85.4% - 58px);
+      align-content: center;
+      justify-content: center;
+	  background-color: #ffffff;
+    }
+
+    .dark-mode #typeTester {
+	  background-color: #202124;
+      color: white;
+    }
+
+    @media only screen and (max-width:480px) {
+      #typeTester {
+		top: 54%;
+        width: 88%;
+        height: 84%;
+        font-size: 24px;
+      }
+    }
+	  
+#typeTester::-webkit-scrollbar {
+display: none;
+}
+
+#typeTester {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+    textarea::-webkit-input-placeholder {
+      color: #D1D1D1;
+    }
+
+    textarea:-moz-placeholder {
+      /* Firefox 18- */
+      color: #D1D1D1;
+    }
+
+    textarea::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #D1D1D1;
+    }
+
+    textarea:-ms-input-placeholder {
+      color: #D1D1D1;
+    }
+
+    textarea::placeholder {
+      color: #D1D1D1;
+    }
+
+    .dark-mode textarea::-webkit-input-placeholder {
+      color: #5f6368;
+    }
+
+    .dark-mode textarea:-moz-placeholder {
+      /* Firefox 18- */
+      color: #5f6368;
+    }
+
+    .dark-mode textarea::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #5f6368;
+    }
+
+    .dark-mode textarea:-ms-input-placeholder {
+      color: #5f6368;
+    }
+
+    .dark-mode textarea::placeholder {
+      color: #5f6368;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--Title-->
+  <div>
+    <a href="./home.html">
+      <h1 id="headerTitle">Fase Project</h1>
+    </a>
+  </div>
+
+  <!-- Top Navigation Menu -->
+  <div class="navbar">
+    <div class="dropdown">
+		
+      <button class="dropbtn">
+        <svg class="burgerLine" id="burgerLine1" height="20" width="22">
+          <line x1="0" y1="0" x2="22" y2="0" />
+        </svg>
+
+        <svg class="burgerLine" id="burgerLine2" height="20" width="22">
+          <line x1="0" y1="0" x2="22" y2="0" />
+        </svg>
+
+        <svg class="burgerLine" id="burgerLine3" height="20" width="22">
+          <line x1="0" y1="0" x2="22" y2="0" />
+        </svg>
+      </button>
+		
+      <div class="dropdown-content">
+        <a href="./info.html">Info</a>
+        <a href="https://github.com/diegomassaroo/Fase-Project/archive/main.zip" download>Download</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Info button-->
+  <div>
+    <a href="./info.html">
+      <p class="button" id="infoButton">Info</p>
+    </a>
+  </div>
+
+  <!--Download button-->
+  <div>
+    <a href="https://github.com/diegomassaroo/Fase-Project/archive/main.zip" download>
+      <p class="button" id="downloadButton">Download</p>
+    </a>
+  </div>
+
+  <!--Dark mode button-->
+  <div onclick="darkModeButton()">
+    <div class="darkmodeButton">
+      <svg height="30" width="30">
+        <circle cx="15" cy="15" r="14" /></svg>
+    </div>
+    <div class="darkmodeButton2">
+      <svg height="30" width="14">
+        <circle cx="0" cy="15" r="14" /></svg>
+    </div>
+  </div>
+
+  <!--Rect divider-->
+  <div class="rectTop">
+  </div>
+
+  <!--Type tester-->
+  <div>
+    <textarea autofocus id="typeTester" placeholder="Type something…"></textarea>
+  </div>
+
+  <!--Light value-->
+  <div id="lightLevel">
+  </div>
+
+  <script id="rendered-js">
+    // This only works behind a flag in chrome
+    // More information here: https://www.chromestatus.com/feature/5298357018820608
+    // Set flag here: chrome://flags/
+    // See if your browser support the light sensor api:https://caniuse.com/?search=ambient%20light%20sensor
+
+    //Choose which element to change
+    var changeText = document.getElementById("typeTester");
+
+    changeText.addEventListener("input", function() {
+      this.setAttribute("data-text", this.innerText);
+    });
+
+    //Set min and max value for font and light
+    const minAxisValue = 159;
+    const maxAxisValue = 85;
+
+    const minEventValue = 0;
+    const maxEventValue = 3000;
+
+    //CSS that change font weight
+    changeText.style.setProperty("--axis", 85);
+
+    //Setting light value correspond to axis value
+    if ('AmbientLightSensor' in window) {
+      const sensor = new AmbientLightSensor();
+      sensor.onreading = () => {
+
+        fluidAxisVariation(minAxisValue, maxAxisValue, minEventValue, maxEventValue, sensor.illuminance, "--axis", changeText);
+
+        //Print sensor value
+        lightLevel.innerHTML = 'Ambient light value: ' + sensor.illuminance + ' lux';
+        //console.log('Current light level:', sensor.illuminance);
+      };
+      sensor.onerror = (event) => {
+        console.log(event.error.name, event.error.message);
+      };
+      sensor.start();
+    }
+
+    //Proprortion and calculation to transform light value into axis value
+    function fluidAxisVariation(minimumAxisValue, maximumAxisValue, minimumEventValue, maximumEventValue, eventValue, axisCustomPropertyName, element) {
+
+      const minAxisValue = minimumAxisValue;
+      const maxAxisValue = maximumAxisValue;
+      const minEventValue = minimumEventValue;
+      const maxEventValue = maximumEventValue;
+      const currentEventValue = eventValue;
+
+      const eventPercent = (currentEventValue - minEventValue) / (maxEventValue - minEventValue);
+      const fontAxisScale = eventPercent * (minAxisValue - maxAxisValue) + maxAxisValue;
+
+      const fontAxisScale2 = eventPercent * (minAxisValue - maxAxisValue) + maxAxisValue;
+
+      const newAxisValue = currentEventValue > maxEventValue ?
+        minAxisValue :
+        currentEventValue < minEventValue ?
+        maxAxisValue :
+        fontAxisScale;
+
+      element.style.setProperty(axisCustomPropertyName, newAxisValue);
+    }
+  </script>
+
+</body>
+
+</html>

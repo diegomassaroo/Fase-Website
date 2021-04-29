@@ -14,11 +14,11 @@
     @font-face {
       font-family: "Fase";
       src: url('assets/fonts/Fase.woff2') format("woff2-variations"), url('assets/fonts/Fase.ttf') format("truetype-variations");
-      font-weight: 85 159;
+      font-weight: 82 137;
     }
 
     #typeTester {
-      --axis: 85;
+      --axis: 82;
       font-family: "Fase", Helvetica, Sans-serif;
       font-weight: var(--axis);
       font-size: 32px;
@@ -229,14 +229,14 @@ display: none;
     });
 
     //Set min and max value for font and light
-    const minAxisValue = 159;
-    const maxAxisValue = 85;
+    const minAxisValue = 137;
+    const maxAxisValue = 82;
 
     const minEventValue = 0;
     const maxEventValue = 3000;
 
     //CSS that change font weight
-    changeText.style.setProperty("--axis", 85);
+    changeText.style.setProperty("--axis", 82);
 
     //Setting light value correspond to axis value
     if ('AmbientLightSensor' in window) {

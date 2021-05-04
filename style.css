@@ -74,11 +74,11 @@ display: none;
   cursor: pointer;
   border: 0px solid #5f6368;
   color: #e8eaed;
-  background: rgba(32, 33, 36, 0.5);
+  background: rgba(0, 142, 230, 0.5);
 }
 
 #getstartedButton:hover {
-  background: #393939;
+  background: #008EE6;
   color: white;
 }
 

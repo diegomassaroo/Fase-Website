@@ -9,6 +9,21 @@ body.dark-mode {
   background-color: #202124;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #E8E9ED;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
 /*Attention layer*/
 
 #attentionLayer {

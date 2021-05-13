@@ -128,7 +128,7 @@ display: none;
   margin-bottom: 12px;
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:680px) {
   #title-attention {
     font-size: 38px;
   }
@@ -154,7 +154,7 @@ display: none;
   z-index: 2;
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:680px) {
   #headerTitle {
     text-align: center;
     left: calc(50% - 52px);
@@ -452,7 +452,7 @@ display: none;
   right: 72px;
 }
 
-@media only screen and (min-width:480px) {
+@media only screen and (min-width:680px) {
   .button {
     display: block;
   }
@@ -478,7 +478,7 @@ display: none;
   fill: #202124;
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:680px) {
   .darkmodeButton {
     right: 20px;
   }
@@ -500,7 +500,7 @@ display: none;
   fill: #e8eaed;
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:680px) {
   .darkmodeButton2 {
     right: 20px;
   }
@@ -539,7 +539,7 @@ display: none;
   color: #C3C5C7;
 }
 
-@media only screen and (max-width:680px) {
+@media only screen and (max-width:980px) {
   #lightLevel {
     display: none;
   }
@@ -635,7 +635,7 @@ display: none;
   top: 36px;
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:680px) {
   .dropdown {
     display: block;
   }

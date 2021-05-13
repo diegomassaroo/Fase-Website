@@ -270,7 +270,7 @@ display: none;
 .col-about {
 	top: 118px;
 	left: 56px;
-	width: calc(75% - 112px);
+	width: calc(76.5% - 112px);
 	height: 100%;
 	position: absolute;
 }
@@ -278,18 +278,18 @@ display: none;
 .col-text {
 	float: left;
 	left: 25%;
-	width: 63%;
+	width: 65%;
 }
 
 .col-title {
 	float: left;
-	width: 37%;
+	width: 35%;
 }
 
 .col-contact {
 	top: 118px;
 	right: 56px;
-	width: 25%;
+	width: 23.5%;
 	height: 78%;
 	position: absolute;
 }

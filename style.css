@@ -40,7 +40,7 @@ body.dark-mode {
   font-kerning: normal;
   
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.55;
   letter-spacing: .02rem;
 
   overflow-y: scroll;
@@ -205,7 +205,7 @@ display: none;
   font-kerning: normal;
   
   text-align: left;
-  line-height: 1.45;
+  line-height: 1.46;
   letter-spacing: .02rem;
   color: #3C4043;
   margin-top: 5px;
